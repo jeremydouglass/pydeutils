@@ -111,3 +111,26 @@ def enable(func):
 #    @state
 #    def special_function_foo():
 #        print "function was enabled"
+
+####################
+## @print_args
+####################
+
+@simple_decorator
+def print_args(func):
+    """Print arguments passed to a function before calling it.
+    Apply @print_args to any function.
+    
+    wiki.python.org/moin/PythonDecoratorLibrary
+    #Easy_Dump_of_Function_Arguments
+    """
+    argnames = func.func_code.co_varnames[:func.func_code.co_argcount]
+    fname = func.func_name
+
+    def echo_func(*args,**kwargs):
+        print fname, ":", ', '.join(
+            '%s=%r' % entry
+            for entry in zip(argnames,args) + kwargs.items())
+        return func(*args, **kwargs)
+
+    return echo_func
