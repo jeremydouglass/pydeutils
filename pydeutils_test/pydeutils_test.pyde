@@ -39,3 +39,12 @@ def test_print_args():
         print '...backwards is:', two + one
 
     wardback('foo', 'bar')
+
+@pu.at_exit
+def final_thought():
+    """Prints a final thought.
+       The @pu.at_exit decorator causes this function
+       to be called just before a normal exit occurs -- such as
+       calling exit(), or closing the pyde sketch window.
+    """
+    print "Exiting: That's all, folks!"
