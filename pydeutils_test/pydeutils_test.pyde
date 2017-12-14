@@ -6,6 +6,7 @@ def setup():
     """Set up the sketch."""
 
     test_pickle()
+    test_print_args()
     exit()
 
 class Cucumber(object):
@@ -24,3 +25,17 @@ def test_pickle():
     print obj2.txt
     ## delete save file
     pu.deletePickle('obj.pickle')
+
+def test_print_args():
+    """Inspect function calls and objects for debugging."""
+
+    @pu.print_args
+    def wardback(one, two):
+        """Prints two + one.
+           The @pu.print_args decorator causes this function
+           to print its name and arguments to the console.
+           when called.
+        """
+        print '...backwards is:', two + one
+
+    wardback('foo', 'bar')
