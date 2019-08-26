@@ -24,13 +24,13 @@ After you install and then import it with `import pydeutils as pu`
 
 ### decorators -- add with @ above a function definition:
 
-@pu.at_exit -- causes a function to be called just before a normal exit occurs -- such as calling exit(), or - closing the pyde sketch window.
-@pu.disable -- Do nothing rather than execute the provided function.
-@pu.enable -- Marked as not0-disabled (pass-through)
-@pu.handle_file -- for a function which takes a file or a str as it's first argument, if a str is provided, replace the first argument of the wrapped function with a file handle, and close the file after the function returns.
-@pu.print_args -- Print arguments passed to a function before calling it.
+-  @pu.at_exit -- causes a function to be called just before a normal exit occurs -- such as calling exit(), or - closing the pyde sketch window.
+-  @pu.disable -- Do nothing rather than execute the provided function.
+-  @pu.enable -- Marked as not0-disabled (pass-through)
+-  @pu.handle_file -- for a function which takes a file or a str as it's first argument, if a str is provided, replace the first argument of the wrapped function with a file handle, and close the file after the function returns.
+-  @pu.print_args -- Print arguments passed to a function before calling it.
 
 ### functions:
 
-pu.exists() -- shortcut for os.path.exists(), lets you check for a file or folder.
-pu.loadPickle, pu.deletePickle, pu.savePickle -- enable you to serialize Python 2 objects to disk and then load them again. This makes it easy to run an arbitrarily complex sketch, save the whole state, and resume on load.
+-  pu.exists() -- shortcut for os.path.exists(), lets you check for a file or folder.
+-  pu.loadPickle, pu.deletePickle, pu.savePickle -- enable you to serialize Python 2 objects to disk and then load them again. This makes it easy to run an arbitrarily complex sketch, save the whole state, and resume on load.
